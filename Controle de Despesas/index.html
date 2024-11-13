@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Despesas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        input {
+            flex: 1;
+            border: 1px solid #ced4da;
+        }
+        button {
+            background-color: #218838;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        #expenses-list {
+            width: 100%;
+            max-width: 600px;
+        }
+        .expense-item {
+            background-color: #ffffff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .expense-item p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .expense-item button {
+            margin-left: 10px;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: none;
+            color: #fff;
+        }
+        .expense-item button:nth-child(1) {
+            background-color: #dc3545;
+        }
+        .expense-item button:nth-child(2) {
+            
+            background-color: #007bff;
+        }
+        .expense-item button:nth-child(1):hover {
+            background-color: #0056b3;
+        }
+        .expense-item button:nth-child(2):hover {
+            background-color: #c82333;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Controle de Despesas</h1>
+    <div class="form-container">
+        <form id="expense-form">
+            <input type="text" id="description" placeholder="Descrição" required>
+            <input type="number" id="amount" placeholder="Valor" required>
+            <input type="date" id="date">
+            <button type="submit">Cadastrar Despesa</button>
+        </form>
+    </div>
+    <h2>Total das Despesas: R$ <span id="total-expenses">0.00</span></h2>
+    <div id="expenses-list"></div>
+    <script src="script.js"></script>
+</body>
+</html>
